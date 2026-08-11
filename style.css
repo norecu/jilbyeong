@@ -1,16 +1,12 @@
 :root {
   --bg: #0a0f0d;
   --panel: rgba(10, 15, 13, 0.82);
-
   --text: #e8eee9;
   --muted: #9daaa3;
   --muted-2: #718078;
-
   --line: rgba(151, 177, 163, 0.18);
-
   --accent: #e6b95c;
   --accent-soft: rgba(230, 185, 92, 0.18);
-
   --green: #2c6e63;
 }
 
@@ -22,15 +18,10 @@ html,
 body {
   width: 100%;
   height: 100%;
-
   margin: 0;
-
   overflow: hidden;
-
   background: var(--bg);
-
   color: var(--text);
-
   font-family: "Inter", sans-serif;
 }
 
@@ -44,55 +35,40 @@ input {
 }
 
 /* ================================================================
-Grain
+   Grain
 ================================================================ */
 
 .grain {
   position: fixed;
-
   inset: 0;
-
   z-index: 200;
-
   pointer-events: none;
-
   opacity: 0.035;
-
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
-
   mix-blend-mode: soft-light;
 }
 
 /* ================================================================
-Topbar
+   Topbar
 ================================================================ */
 
 .topbar {
   position: fixed;
-
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 40;
-
   display: flex;
-
   align-items: flex-start;
-
   justify-content: space-between;
-
   gap: 40px;
-
   padding: 24px 28px 18px;
-
   background: linear-gradient(
     to bottom,
     rgba(10, 15, 13, 0.96),
     rgba(10, 15, 13, 0.82),
     rgba(10, 15, 13, 0)
   );
-
   pointer-events: none;
 }
 
@@ -106,49 +82,33 @@ Topbar
 
 .eyebrow {
   display: block;
-
   margin-bottom: 5px;
-
   color: var(--accent);
-
   font-size: 11px;
-
   font-weight: 600;
-
   letter-spacing: 0.12em;
 }
 
 .topbar h1 {
   margin: 0;
-
   color: #f3f6f3;
-
   font-family: "Fraunces", serif;
-
   font-size: clamp(25px, 3vw, 38px);
-
   font-weight: 600;
-
   letter-spacing: -0.035em;
-
   line-height: 1.05;
 }
 
 /* ================================================================
-Top controls
+   Top controls
 ================================================================ */
 
 .topbar__controls {
   display: flex;
-
   align-items: flex-start;
-
   justify-content: flex-end;
-
   gap: 22px;
-
   max-width: 62%;
-
   padding-top: 2px;
 }
 
@@ -158,55 +118,36 @@ Top controls
 
 .field > label {
   display: block;
-
   margin-bottom: 7px;
-
   color: var(--muted);
-
   font-size: 11px;
-
   font-weight: 600;
-
   letter-spacing: 0.04em;
 }
 
 /* ================================================================
-Year / Disease buttons
+   Year / Disease buttons
 ================================================================ */
 
 .choice-buttons {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 5px;
-
   max-width: 100%;
 }
 
 .choice-button {
   appearance: none;
-
   border: 1px solid rgba(157, 179, 166, 0.24);
-
   background: rgba(255, 255, 255, 0.045);
-
   color: #aebbb4;
-
   border-radius: 7px;
-
   padding: 7px 11px;
-
   min-height: 32px;
-
   font-size: 12px;
-
   font-weight: 600;
-
   line-height: 1;
-
   cursor: pointer;
-
   transition:
     color 0.15s ease,
     background 0.15s ease,
@@ -217,182 +158,130 @@ Year / Disease buttons
 
 .choice-button:hover {
   color: #ffffff;
-
   background: rgba(255, 255, 255, 0.085);
-
   border-color: rgba(230, 185, 92, 0.48);
-
   transform: translateY(-1px);
 }
 
 .choice-button:focus-visible {
   outline: 2px solid rgba(230, 185, 92, 0.75);
-
   outline-offset: 2px;
 }
 
 .choice-button.is-active {
   color: #171b18;
-
   background: var(--accent);
-
   border-color: var(--accent);
-
   box-shadow: 0 4px 16px rgba(230, 185, 92, 0.18);
 }
 
 /* ================================================================
-Data note
+   Data note
 ================================================================ */
 
 .data-note {
   position: fixed;
-
   top: 108px;
-
   left: 28px;
-
   z-index: 25;
-
   max-width: 470px;
-
   margin: 0;
-
   color: rgba(174, 187, 180, 0.62);
-
   font-size: 10px;
-
   line-height: 1.55;
-
   pointer-events: none;
 }
 
 /* ================================================================
-Stage
+   Stage
 ================================================================ */
 
 .stage {
   position: fixed;
-
   inset: 0;
-
   overflow: hidden;
 }
 
 #canvas-host {
   position: absolute;
-
   inset: 0;
 }
 
 #canvas-host canvas {
   display: block;
-
   width: 100%;
   height: 100%;
-
   touch-action: none;
 }
 
 #labels-layer {
   position: absolute;
-
   inset: 0;
-
   z-index: 10;
-
   pointer-events: none;
 }
 
 /* ================================================================
-Region labels
+   Region labels
 ================================================================ */
 
 .region-label {
   position: absolute;
-
   white-space: nowrap;
-
   transform-origin: center bottom;
-
   color: rgba(239, 245, 241, 0.82);
-
   font-size: 11px;
-
   font-weight: 600;
-
   letter-spacing: -0.02em;
-
   text-shadow:
     0 1px 3px rgba(0, 0, 0, 0.95),
     0 0 8px rgba(0, 0, 0, 0.75);
-
   transition:
     color 0.15s ease,
     opacity 0.15s ease;
 }
 
 /* ================================================================
-HUD
+   HUD
 ================================================================ */
 
 .hud {
   position: fixed;
-
   right: 28px;
-
   top: 132px;
-
   z-index: 25;
-
   width: 175px;
-
   pointer-events: none;
-
   color: var(--text);
 }
 
 .hud__stat {
   display: grid;
-
   grid-template-columns: auto 1fr auto;
-
   align-items: baseline;
-
   gap: 5px;
-
   margin-bottom: 18px;
-
   padding-bottom: 14px;
-
   border-bottom: 1px solid rgba(151, 177, 163, 0.14);
 }
 
 .hud__label {
   color: var(--muted);
-
   font-size: 10px;
-
   font-weight: 600;
-
   letter-spacing: 0.04em;
 }
 
 .hud__value {
   color: #f5f7f5;
-
   font-family: "JetBrains Mono", monospace;
-
   font-size: 20px;
-
   font-weight: 500;
-
   text-align: right;
 }
 
 .hud__unit {
   color: var(--muted-2);
-
   font-size: 10px;
 }
 
@@ -402,207 +291,136 @@ HUD
 
 .legend-bar {
   width: 100%;
-
   height: 7px;
-
   margin-top: 7px;
-
   border-radius: 999px;
-
   background: linear-gradient(90deg, #2c6e63, #f2c14e, #ff6b4a);
 }
 
 .legend-scale {
   display: flex;
-
   justify-content: space-between;
-
   margin-top: 4px;
-
   color: var(--muted-2);
-
   font-family: "JetBrains Mono", monospace;
-
   font-size: 9px;
 }
 
 .hud__hint {
   margin: 0;
-
   color: rgba(157, 170, 163, 0.62);
-
   font-size: 10px;
-
   line-height: 1.55;
 }
 
 /* ================================================================
-Disease description
+   Disease description
 ================================================================ */
 
 .disease-description {
   position: fixed;
-
   top: 100px;
-
   left: 28px;
-
   z-index: 25;
-
   width: min(390px, calc(100vw - 56px));
-
   padding: 17px 19px;
-
   border: 1px solid rgba(151, 177, 163, 0.17);
-
   border-radius: 13px;
-
   background: rgba(10, 15, 13, 0.7);
-
   backdrop-filter: blur(10px);
-
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
 }
 
 .disease-description__title {
   margin: 0 0 7px;
-
   color: #ffffff;
-
   font-size: 16px;
-
   font-weight: 600;
-
   letter-spacing: -0.025em;
 }
 
 .disease-description__body {
   margin: 0;
-
   color: #aebbb4;
-
   font-size: 12px;
-
   line-height: 1.7;
-
   word-break: keep-all;
 }
 
 /* ================================================================
-Interaction guide
+   Interaction guide
 ================================================================ */
 
 .interaction-guide {
   position: fixed;
-
   left: 24px;
-
   bottom: 24px;
-
   z-index: 30;
-
   min-width: 190px;
-
   padding: 13px 15px;
-
   border: 1px solid rgba(151, 177, 163, 0.2);
-
   border-radius: 12px;
-
   background: rgba(10, 15, 13, 0.84);
-
   backdrop-filter: blur(10px);
-
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 .interaction-guide__title {
   margin-bottom: 8px;
-
   color: #ffffff;
-
   font-size: 14px;
-
   font-weight: 700;
 }
 
 .interaction-guide__item {
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
   margin-top: 5px;
-
   color: #b9c4be;
-
   font-size: 13px;
 }
 
 .interaction-guide__key {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   min-width: 52px;
-
   padding: 3px 6px;
-
   border-radius: 5px;
-
   background: rgba(255, 255, 255, 0.08);
-
   color: #f0f5f2;
-
   font-size: 11px;
-
   font-weight: 600;
 }
 
 /* ================================================================
-Camera panel
+   Camera panel
 ================================================================ */
 
 .map-control-panel {
   position: fixed;
-
   right: 24px;
-
   bottom: 24px;
-
   z-index: 30;
-
   width: 220px;
-
   padding: 15px 16px;
-
   border: 1px solid rgba(151, 177, 163, 0.2);
-
   border-radius: 14px;
-
   background: rgba(10, 15, 13, 0.88);
-
   backdrop-filter: blur(12px);
-
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .map-control-panel__title {
   margin-bottom: 14px;
-
   color: #ffffff;
-
   font-size: 14px;
-
   font-weight: 700;
 }
 
 .map-control {
   display: block;
-
   margin-bottom: 14px;
 }
 
@@ -612,15 +430,10 @@ Camera panel
 
 .map-control > span {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   margin-bottom: 7px;
-
   color: #cbd5cf;
-
   font-size: 11px;
 }
 
@@ -630,198 +443,133 @@ Camera panel
 
 .map-control output {
   color: #a7c4b5;
-
   font-family: "JetBrains Mono", monospace;
-
   font-size: 10px;
-
   font-variant-numeric: tabular-nums;
 }
 
 .map-control input[type="range"] {
   display: block;
-
   width: 100%;
-
   height: 4px;
-
   margin: 0;
-
   accent-color: var(--accent);
-
   cursor: pointer;
 }
 
 .map-control input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
-
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.12);
 }
 
 .map-control input[type="range"]::-webkit-slider-thumb {
   appearance: none;
-
   width: 13px;
   height: 13px;
-
   margin-top: -4.5px;
-
   border: 2px solid #f1d58b;
-
   border-radius: 50%;
-
   background: #e6b95c;
-
   box-shadow: 0 0 0 3px rgba(230, 185, 92, 0.1);
-
   cursor: pointer;
 }
 
 .map-control input[type="range"]::-moz-range-track {
   height: 4px;
-
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.12);
 }
 
 .map-control input[type="range"]::-moz-range-thumb {
   width: 11px;
   height: 11px;
-
   border: 2px solid #f1d58b;
-
   border-radius: 50%;
-
   background: #e6b95c;
-
   cursor: pointer;
 }
 
 /* ================================================================
-Tooltip
+   Tooltip
 ================================================================ */
 
 .tooltip {
   position: fixed;
-
   z-index: 100;
-
   min-width: 125px;
-
   padding: 10px 12px;
-
   border: 1px solid rgba(151, 177, 163, 0.2);
-
   border-radius: 9px;
-
   background: rgba(8, 12, 10, 0.94);
-
   backdrop-filter: blur(8px);
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-
   transform: translate(12px, 12px);
-
   pointer-events: none;
 }
 
 .tooltip__name {
   display: block;
-
   margin-bottom: 3px;
-
   color: #ffffff;
-
   font-size: 12px;
-
   font-weight: 700;
 }
 
 .tooltip__value {
   display: block;
-
   color: #e6b95c;
-
   font-family: "JetBrains Mono", monospace;
-
   font-size: 12px;
 }
 
 .tooltip__note {
   display: block;
-
   margin-top: 4px;
-
   color: #9daaa3;
-
   font-size: 9px;
 }
 
 /* ================================================================
-Loading
+   Loading
 ================================================================ */
 
 .loading {
   position: absolute;
-
   top: 50%;
   left: 50%;
-
   z-index: 90;
-
   width: 240px;
-
   transform: translate(-50%, -50%);
-
   padding: 18px;
-
   border: 1px solid rgba(151, 177, 163, 0.18);
-
   border-radius: 12px;
-
   background: rgba(10, 15, 13, 0.88);
-
   backdrop-filter: blur(10px);
-
   text-align: center;
-
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .loading__bar {
   width: 100%;
-
   height: 4px;
-
   overflow: hidden;
-
   margin-bottom: 11px;
-
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.08);
 }
 
 .loading__fill {
   width: 40%;
-
   height: 100%;
-
   border-radius: inherit;
-
   background: var(--accent);
-
   animation: loading-slide 1.2s infinite ease-in-out;
 }
 
 .loading p {
   margin: 0;
-
   color: var(--muted);
-
   font-size: 11px;
 }
 
@@ -840,76 +588,54 @@ Loading
 }
 
 /* ================================================================
-Error
+   Error
 ================================================================ */
 
 .error-panel {
   position: absolute;
-
   top: 50%;
   left: 50%;
-
   z-index: 95;
-
   width: min(430px, calc(100vw - 40px));
-
   transform: translate(-50%, -50%);
-
   padding: 20px;
-
   border: 1px solid rgba(255, 107, 74, 0.35);
-
   border-radius: 12px;
-
   background: rgba(20, 12, 10, 0.94);
-
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
 }
 
 .error-panel__title {
   margin: 0 0 8px;
-
   color: #ff9b83;
-
   font-size: 15px;
-
   font-weight: 700;
 }
 
 .error-panel__body {
   margin: 0;
-
   white-space: pre-line;
-
   color: #c9b7b2;
-
   font-size: 11px;
-
   line-height: 1.6;
 }
 
 /* ================================================================
-Footer
+   Footer
 ================================================================ */
 
 .footer {
   position: fixed;
-
   right: 28px;
-
   bottom: 12px;
-
   z-index: 20;
-
   color: rgba(157, 170, 163, 0.42);
-
   font-size: 9px;
-
   pointer-events: none;
 }
 
 /* ================================================================
-Utility
+   Utility
 ================================================================ */
 
 .hidden {
@@ -917,41 +643,34 @@ Utility
 }
 
 /* ================================================================
-Responsive
+   Responsive
 ================================================================ */
 
 @media (max-width: 900px) {
   .topbar {
     gap: 20px;
-
     padding: 18px 18px;
   }
 
   .topbar__controls {
     max-width: 60%;
-
     gap: 12px;
   }
 
   .data-note {
     left: 18px;
-
     top: 100px;
-
     max-width: 340px;
   }
 
   .disease-description {
     top: 130px;
-
     left: 18px;
-
     width: 330px;
   }
 
   .hud {
     right: 18px;
-
     top: 115px;
   }
 }
@@ -963,7 +682,6 @@ Responsive
 
   .topbar {
     display: block;
-
     padding: 15px 14px 10px;
   }
 
@@ -977,15 +695,10 @@ Responsive
 
   .topbar__controls {
     display: flex;
-
     align-items: flex-start;
-
     justify-content: flex-start;
-
     gap: 10px;
-
     max-width: none;
-
     margin-top: 12px;
   }
 
@@ -995,15 +708,12 @@ Responsive
 
   .choice-buttons {
     max-width: 100%;
-
     gap: 4px;
   }
 
   .choice-button {
     min-height: 28px;
-
     padding: 6px 8px;
-
     font-size: 10px;
   }
 
@@ -1013,11 +723,8 @@ Responsive
 
   .disease-description {
     top: 178px;
-
     left: 14px;
-
     width: calc(100vw - 28px);
-
     padding: 12px 14px;
   }
 
@@ -1027,21 +734,15 @@ Responsive
 
   .disease-description__body {
     font-size: 11px;
-
     line-height: 1.55;
-
     max-height: 90px;
-
     overflow: hidden;
   }
 
   .hud {
     top: auto;
-
     right: 14px;
-
     bottom: 155px;
-
     width: 145px;
   }
 
@@ -1055,11 +756,8 @@ Responsive
 
   .interaction-guide {
     left: 12px;
-
     bottom: 12px;
-
     min-width: 150px;
-
     padding: 10px 12px;
   }
 
@@ -1073,23 +771,18 @@ Responsive
 
   .interaction-guide__key {
     min-width: 42px;
-
     font-size: 9px;
   }
 
   .map-control-panel {
     right: 12px;
-
     bottom: 12px;
-
     width: 180px;
-
     padding: 11px 12px;
   }
 
   .map-control-panel__title {
     font-size: 12px;
-
     margin-bottom: 10px;
   }
 
@@ -1113,7 +806,6 @@ Responsive
 @media (max-width: 480px) {
   .topbar__controls {
     flex-direction: column;
-
     align-items: flex-start;
   }
 
